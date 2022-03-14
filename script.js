@@ -8,11 +8,11 @@ const removeBtn = document.getElementById("clear-all");
 const existingTodos = JSON.parse(localStorage.getItem("todos")) || [];
 const todoDataList = [];
 existingTodos.forEach((todo) => {
-  addTodo(todo);
+  addTodoListItem(todo);
 });
 
 // Function that adds to local Storage
-function addTodo(todoText) {
+function addTodoListItem(todoText) {
   if (todoText) {
     todoDataList.push(todoText);
     const li = document.createElement("li");
@@ -31,7 +31,7 @@ function removeTodoListItem() {
 // Events
 form.onsubmit = (event) => {
   event.preventDefault();
-  addTodo(input.value);
+  addTodoListItem(input.value);
 };
 
 removeBtn.addEventListener("click", removeTodoListItem);
