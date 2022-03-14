@@ -13,18 +13,19 @@ existingTodos.forEach((todo) => {
 
 // Function that adds to local Storage
 function addTodo(todoText) {
-  todoDataList.push(todoText);
-  const li = document.createElement("li");
-  li.innerHTML = todoText;
-  todoList.appendChild(li);
-  localStorage.setItem("todos", JSON.stringify(todoDataList));
+  if (todoText) {
+    todoDataList.push(todoText);
+    const li = document.createElement("li");
+    li.innerHTML = todoText;
+    todoList.appendChild(li);
+    localStorage.setItem("todos", JSON.stringify(todoDataList));
+  }
 }
 
 function removeTodoListItem() {
+  todoDataList.pop();
   todoList.removeChild(todoList.lastElementChild);
-  // localStorage.removeItem("todos", JSON.stringify(todoDataList));
-
-  // alert("You Cleared all of the Tasks in this ToDo List");
+  localStorage.setItem("todos", JSON.stringify(todoDataList));
 }
 
 // Events
