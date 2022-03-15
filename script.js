@@ -3,6 +3,7 @@ const form = document.querySelector("form");
 const input = document.querySelector("[name='todo']");
 const todoList = document.getElementById("todos");
 const removeBtn = document.getElementById("clear-all");
+// const xBtn = document.getElementById("delete-button");
 
 // Side Effects / Lifecycle
 const existingTodos = JSON.parse(localStorage.getItem("todos")) || [];
@@ -35,3 +36,7 @@ form.onsubmit = (event) => {
 };
 
 removeBtn.addEventListener("click", removeTodoListItem);
+
+// function testDumbyFunction() {
+//   console.log("button was pressed! and is working!!");
+// }
