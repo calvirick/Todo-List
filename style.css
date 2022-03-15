@@ -7,6 +7,14 @@ body {
   margin-left: 5%;
 }
 
+input {
+  cursor: pointer;
+}
+
+input[type="text"] {
+  cursor: auto;
+}
+
 ul {
   list-style: none;
   margin-left: 0;
